@@ -6,6 +6,7 @@ import Navigation from '../components/Navigation';
 import Home from '../components/Home';
 import About from '../components/About';
 import Work from '../components/Work';
+import Projects from '../components/Project';
 import Footer from '../components/Footer';
 
 const FlexContainer = styled.div.attrs({
@@ -44,7 +45,7 @@ export default class Container extends React.Component {
                 </FlexBox>
 
                 <FlexBox>
-                    
+                    <Projects/>
                 </FlexBox>
 
                 <FlexBox>
