@@ -16,7 +16,7 @@ const Text = styled.div.attrs({
 })``
 
 const Surname = styled.h3.attrs({
-    className: `fw3 f3 f2-ns gray`
+    className: `fw3 f2 f2-ns gray`
 })``
 
 const Forename = styled.h1.attrs({
@@ -28,7 +28,7 @@ const TitleDiv = styled.div.attrs({
 })``
 
 const TitlesParagraph = styled.p.attrs({
-    className: `fw3 gray f6 f3-ns center bg-animate grow mb0 mt0`
+    className: `fw3 gray f5 f3-ns center bg-animate grow mb0 mt0`
 })``
 
 export default class Home extends React.Component {
