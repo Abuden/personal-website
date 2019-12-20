@@ -20,11 +20,15 @@ const Surname = styled.h3.attrs({
 })``
 
 const Forename = styled.h1.attrs({
-    className: `f-headline fw3 f1 f1-ns gray tracked`
+    className: `f-headline fw3 f1 f1-ns black tracked grow`
+})``
+
+const TitleDiv = styled.div.attrs({
+    className: ``
 })``
 
 const TitlesParagraph = styled.p.attrs({
-    className: `fw3 gray f6 f3-ns center`
+    className: `fw3 gray f6 f3-ns center bg-animate grow mb0 mt0`
 })``
 
 export default class Home extends React.Component {
@@ -42,9 +46,21 @@ export default class Home extends React.Component {
                     <Text>
                         <Surname>Yeoh, I'm</Surname>
                         <Forename>Braddy</Forename>
-                        <TitlesParagraph>
-                            UCD Computer Science<br/>Software Engineer<br/>Foodie<br/>Photographer
-                        </TitlesParagraph>
+                        <TitleDiv>
+                            <TitlesParagraph>
+                                UCD Computer Science
+                            </TitlesParagraph>
+                            <TitlesParagraph>
+                                Software Engineer
+                            </TitlesParagraph>
+                            <TitlesParagraph>
+                                Foodie
+                            </TitlesParagraph>
+                            <TitlesParagraph>
+                                Photographer
+                            </TitlesParagraph>
+                        </TitleDiv>
+                       
                         <Footer/>
                     </Text>
                 </Display>

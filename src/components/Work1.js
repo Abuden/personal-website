@@ -6,7 +6,7 @@ const OuterFlexColumn = styled.div.attrs({
 })``
 
 const Subtitle = styled.div.attrs({
-    className: `tc fw2 f1 pt5 pb3 bb w-100 mb5 f2 tracked`  
+    className: `tc fw2 f1 pb3 bb w-100 mb5 f2 tracked`  
 })``
 
 const InnerFlexColumn = styled.div.attrs({

@@ -17,8 +17,14 @@ const FlexBox = styled.div.attrs({
     className: `w-75 center mr2 h-100`,
 })``
 
+const FlexImage = styled.div.attrs({
+    className: `center cover h-100 w-100`,
+    backgroundImage: `url(${Me})`
+})``
+
 const Image = styled.img.attrs({
-    className: `mw-100 cover`,
+    className: ``,
+    src: props => props.url
 })``
 export default class Container extends React.Component {
     constructor(props) {
@@ -35,14 +41,6 @@ export default class Container extends React.Component {
         }
     }
 
-    componentDidMount = () => {
-        //scrollToComponent()
-    }
-
-    handleClick = () => {
-        
-    }
-
     render() {
         return (
             <FlexContainer>
@@ -50,10 +48,11 @@ export default class Container extends React.Component {
                         <Home/>
                     </FlexBox>
 
-               
-                        <Image
-                            style={{backgroundImage: '../assets/img/me.jpg'}}
-                        />
+                    <FlexImage>
+                       {/*<Image 
+                            url = {Me}
+                       />*/}
+                    </FlexImage>
                    
 
                     <FlexBox>
