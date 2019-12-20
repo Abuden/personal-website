@@ -25,11 +25,11 @@ const Subtitle = styled.div.attrs({
 })``
 
 const Paragraph = styled.p.attrs({
-  className: `w-100 pt4 lh-copy fw4 dark-gray f5 f4-ns tj tc-ns center`
+  className: `w-100 pt4 lh-copy fw4 dark-gray f4 f3-ns tj tc-ns center`
 })``
 
 const TechParagraph = styled.p.attrs({
-  className: `tc center lh-copy fw4 f4 dark-gray tracked pt6 pb4`
+  className: `tc center lh-copy fw4 f4 f3-ns dark-gray tracked pt6 pb4`
 })``
 
 const Card = styled.div.attrs({
@@ -42,15 +42,15 @@ const CardImage = styled.img.attrs({
 })``
 
 const CardDetails = styled.dl.attrs({
-  className: `mt2 f6 lh-copy pb5 `
+  className: `mt2 lh-copy pb5 `
 })``
 
 const CardDT = styled.dt.attrs({
-  className: `f4 tracked fw5 bb mb3 pb2`
+  className: `f4 f3-ns tracked fw5 bb mb3 pb2`
 })``
 
 const CardDD = styled.dd.attrs({
-  className: `tc center f5 f4-ns fw3`
+  className: `tc center f4 f3-ns fw3`
 })``
 
 const FavList = styled.dl.attrs({
@@ -58,11 +58,11 @@ const FavList = styled.dl.attrs({
 })``
 
 const FavTitle = styled.dt.attrs({
-  className: `f4 b`
+  className: `f4 f3-ns b`
 })``
 
 const FavData = styled.dd.attrs({
-  className: `f4 ml0 pt1`
+  className: `f4 f3-ns ml0 pt1`
 })``
 
 

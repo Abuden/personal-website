@@ -23,18 +23,18 @@ const InnerTitle = styled.div.attrs({
 })``
 
 const InnerTitleP = styled.p.attrs({
-    className: `f4 fw4 tracked v-mid tc`
+    className: `f3 f2-ns fw4 tracked v-mid tc`
 })``
 
 const InnerPlace = styled.a.attrs({
-    className: `link pointer dim pt2 pb1 f4 fw3 dark-gray`,
+    className: `link pointer dim pt2 pb1 f3 f2-ns fw3 dark-gray`,
     textDecoration: `none`,
     href: props => props.url,
     target: "_blank"
 })``
 
 const InnerDuration = styled.div.attrs({
-    className: `pb3 fw3 gray`
+    className: `pb3 f4 f3-ns fw3 gray`
 })``
 
 const InnerList = styled.ul.attrs({
@@ -42,7 +42,7 @@ const InnerList = styled.ul.attrs({
 })``
 
 const InnerListItem = styled.li.attrs({
-    className: `f5 fw3 pb4`
+    className: `f4 f3-ns fw3 pb4`
 })``
 
 
