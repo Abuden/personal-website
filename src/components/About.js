@@ -62,7 +62,7 @@ const FavTitle = styled.dt.attrs({
 })``
 
 const FavData = styled.dd.attrs({
-  className: `f4 ml0`
+  className: `f4 ml0 pt1`
 })``
 
 
@@ -128,7 +128,7 @@ export default class About extends React.Component {
             },
             {
               title: "Favorite Drinks",
-              data: "Taro bubble tea, green tea, water"
+              data: "Taro Bubble Tea, Green Tea, Water"
             }
           ]
         }
