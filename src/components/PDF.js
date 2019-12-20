@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import pdf from '../assets/docs/Braddy Yeoh CV.pdf'
 
 const Download = styled.a.attrs({
-    className: `avenir tc center black f3 fw5`,
-    href: {pdf},
+    className: `avenir link pointer tc center black f3 fw5`,
+    textDecoration: `none`,
+    href: pdf,
     target: "_blank"
 })``
 
