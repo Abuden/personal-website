@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Footer from './Footer';
+
 const Article = styled.article.attrs({
     className: `avenir`
 })``
@@ -13,13 +15,16 @@ const Text = styled.div.attrs({
     className: `dtc v-mid`
 })``
 
-const AvatarContainer = styled.header.attrs({
-    className: `tc pv4 pv5-ns`
+const Surname = styled.h3.attrs({
+    className: `fw3 f3 f2-ns gray`
 })``
 
-const Avatar = styled.img.attrs({
-    className: `br3 ba b--black-10 h4 w4`,
-    src: `../assets/img/me.jpg`
+const Forename = styled.h1.attrs({
+    className: `f-headline fw3 f1 f1-ns gray tracked`
+})``
+
+const TitlesParagraph = styled.p.attrs({
+    className: `fw3 gray f6 f3-ns center`
 })``
 
 export default class Home extends React.Component {
@@ -35,13 +40,12 @@ export default class Home extends React.Component {
             <Article>
                 <Display>
                     <Text>
-                        <h3 class="fw3 f1">Hi, I'm</h3>
-                        <h1 class="f1 f-headline-l fw3 dark-gray">Braddy Yeoh</h1>
-                        <blockquote class="ph0 mh0 measure-wide f4 lh-copy center">
-                            <p class="fw3 dark-gray">
-                                Software Engineer | UCD Computer Science | Foodie | Photographer
-                            </p>
-                        </blockquote>
+                        <Surname>Yeoh, I'm</Surname>
+                        <Forename>Braddy</Forename>
+                        <TitlesParagraph>
+                            UCD Computer Science<br/>Software Engineer<br/>Foodie<br/>Photographer
+                        </TitlesParagraph>
+                        <Footer/>
                     </Text>
                 </Display>
             </Article>

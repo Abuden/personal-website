@@ -13,28 +13,31 @@ export default class Navigation extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            tabs: [
+                "Home",
+                "About",
+                "Work",
+                "Projects",
+                "Photography",
+                "Blog"
+            ]
         }
     }
 
     render() {
         return (
             <NavBar>
-               <Tab>
-                   Home
-               </Tab>
-               
-               <Tab>
-                   About
-               </Tab>
-
-               <Tab>
-                   Photography
-               </Tab>
-               
-               <Tab>
-                   Blog
-               </Tab>
+            {
+                this.state.tabs.map((tab, i) => {
+                    return (
+                        <Tab
+                                key={i}
+                        >
+                            {this.state.tabs[i]}
+                        </Tab>
+                    )
+                })
+            }
             </NavBar>
         )
     }

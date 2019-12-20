@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer.attrs({
-    className: `pv4 ph3 ph5-ns tc`
+    className: `pv4 ph3 ph5-ns tc center`
 })``
 
 const SocialMediaIcon = styled.a.attrs({
