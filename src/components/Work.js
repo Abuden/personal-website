@@ -25,9 +25,10 @@ const InnerTitleP = styled.p.attrs({
     className: `f4 fw4 tracked v-mid tc`
 })``
 
-const InnerPlace = styled.div.attrs({
-    className: `link pointer dim pt2 pb1 f4 fw3`,
-    ref: props => props.url,
+const InnerPlace = styled.a.attrs({
+    className: `link pointer dim pt2 pb1 f4 fw3 dark-gray`,
+    textDecoration: `none`,
+    href: props => props.url,
     target: "_blank"
 })``
 
@@ -89,18 +90,6 @@ export default class Work extends React.Component {
                     ]
                 },
             ],
-            selectedWork: {
-                    role: "SAP STAR Intern",
-                    place: "SAP Ireland",
-                    location: "Citywest",
-                    duration: "May 2019 - Current",
-                    link: "https://www.sap.com/index.html",
-                    details: [
-                        "SAP HANA Product Support",
-                        "SAP Fiori Product Support",
-                        "Software Engineer on Augmented Analytics Team"
-                    ]
-            }
         }
     }
 
