@@ -1,14 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Topic from './Topic';
-
-import Me from '../assets/img/me.jpg';
-import { checkPropTypes } from 'prop-types';
-import { throwStatement } from '@babel/types';
+import MERN from '../assets/img/mern.jpg'
+import python from "../assets/img/python.jpg"
 
 const AboutContainer = styled.div.attrs({
-  className: `flex flex-column avenir`
+  className: `flex flex-column avenir pt7`
 })``
 
 const AboutSection = styled.div.attrs({
@@ -16,60 +13,59 @@ const AboutSection = styled.div.attrs({
 })``
 
 const AboutParagraphs = styled.div.attrs({
-  className: `center mw9`
+  className: `flex flex-column flex-wrap-ns`
 })``
 
-const TechSelection = styled.div.attrs({
-  className: `flex bb b--light-silver pt4`
-})``
-
-const TechNav = styled.div.attrs({
-  className: `w-100 tc center f5 fw4 dark-gray pointer dim db bg-animate hover-bg-moon-gray`
-})``
-
-const TechNavText = styled.p.attrs({
-  className: ``
-})``
-
-const TechSection = styled.div.attrs({
-  className: ``
-})``
-
-const TechList = styled.ul.attrs({
-  className: `flex flex-column pt4`
-})``
-
-const TechListItem = styled.li.attrs({
-  className: `list w-100 fw4 f5 gray pr4 tc`
-})``
-
-const Section = styled.div.attrs({
-  className: `dtc v-mid pl3`
+const TechCards = styled.div.attrs({
+  className: `flex flex-wrap`
 })``
 
 const Subtitle = styled.div.attrs({
-  className: `avenir tc fw2 f1 pt5 pb3 bb w-100 mb5 f2 tracked`
+  className: `tc fw2 f1 pt5 pb3 bb w-100 mb5 f2 tracked`
 })``
 
 const Paragraph = styled.p.attrs({
-  className: `pt4 lh-copy fw4 dark-gray avenir tc f5`
+  className: `w-100 pt4 lh-copy fw4 dark-gray f5 f4-ns tj tc-ns center`
 })``
 
 const TechParagraph = styled.p.attrs({
-  className: `tc center lh-copy fw4 f4 dark-gray avenir tracked pt2`
+  className: `tc center lh-copy fw4 f4 dark-gray tracked pt6 pb4`
 })``
 
-const AvatarContainer = styled.div.attrs({
-  className: `center tc cover`,
-  backgroundImage: props => props.url
+const Card = styled.div.attrs({
+  className: `db center mw5 tc black grow`
 })``
 
-const Avatar = styled.img.attrs ({
-  className: `ba bw1 b--gray shadow-5 br2 w-50 dib cover`,
-  src: props => props.img
+const CardImage = styled.img.attrs({
+  className: `db ba b--black-10`,
+  src: props => props.url
 })``
 
-const TopicSelected = `pt4 pr3 center f3 fw4 blue pointer dim .bg-light-silver`
+const CardDetails = styled.dl.attrs({
+  className: `mt2 f6 lh-copy pb5 `
+})``
+
+const CardDT = styled.dt.attrs({
+  className: `f4 tracked fw5 bb mb3 pb2`
+})``
+
+const CardDD = styled.dd.attrs({
+  className: `tc center f5 f4-ns fw3`
+})``
+
+const FavList = styled.dl.attrs({
+  className: `lh-title pa2 mt0 center tc`
+})``
+
+const FavTitle = styled.dt.attrs({
+  className: `f4 b`
+})``
+
+const FavData = styled.dd.attrs({
+  className: `f4 ml0`
+})``
+
+
 
 /* Need to fix media queries here */
 
@@ -78,83 +74,67 @@ export default class About extends React.Component {
         super(props)
         this.state = {
           topics: [
-            "Web",
-            "Unix",
-            "ML",
-            "Game"
+            {
+              title: "Web Development",
+              img: MERN,
+              data: [
+                "React/Redux",
+                "Express.js",
+                "RESTful APIs",
+                "Node.js",
+                "PostgresSQL",
+                "SAPUI5",
+                "Session Management"
+              ]
+            },
+            {
+              title: "Programming Languages",
+              img: python,
+              data: [
+                "C",
+                "Java",
+                "Python",
+                "Ruby",
+                "JavaScript",
+                "BASH",
+                "SQL"
+              ]
+            },
           ],
-          web: [
-            "React/Redux",
-            "Express.js",
-            "RESTful APIs",
-            "Node.js",
-            "PostgresSQL",
-            "SAPUI5",
-          ],
-          unix: [
-            "BASH",
-            "Python",
-            "C"
-          ],
-          ML: [
-            "TensorFlow"
-          ],
-          game: [
-            "JavaFX"
-          ],
-          currentTech: [ 
-            "React/Redux",
-            "Express.js",
-            "RESTful APIs",
-            "Node.js",
-            "PostgresSQL",
-            "Session Management",
-            "SAPUI5"
-          ],
-          route: 0,
-          activeClass: "pt4 pr3 center f1 pointer dim .bg-light-silver bb b-3",
-          inactiveClass: "pt4 pr3 center f3 fw4 dark-gray pointer dim .bg-light-silver",
+          aboutMe: [
+            {
+              title: "Age",
+              data: "21"
+            },
+            {
+              title: "Starsign",
+              data: "Leo"
+            },
+            {
+              title: "Nationality",
+              data: "Malaysian & Ireland"
+            },
+            {
+              title: "Hobbies",
+              data: "Programming, Video Games, Music, Eating, Photography, Sports"
+            },
+            {
+              title: "Favorite Artists",
+              data: "Khalid, Mokita, Rich Brian"
+            }, 
+            {
+              title: "Favorite Food",
+              data: "Fried Chicken"
+            },
+            {
+              title: "Favorite Drinks",
+              data: "Taro bubble tea, green tea, water"
+            }
+          ]
         }
     }
 
-    onNavClick = (event) => {
-      console.log(typeof Number(event.target.id)) 
-      const route = Number(event.target.id)
-      let currentTech = []
-
-      switch(route) {
-        case 0:
-          currentTech = this.state.web
-          break;
-        case 1:
-          currentTech = this.state.unix
-          break
-        case 2:
-          currentTech = this.state.ML
-          break;
-        case 3:
-          currentTech = this.state.game
-          break;
-        default:
-          console.log("id didn't match cases")
-          break;
-
-      }
-
-      currentTech.map((item, i) => {
-        console.log(typeof i)
-      })
-
-      this.setState({
-        currentTech: currentTech,
-        route: route
-      })
-    }
-
     render() {
-      const route = this.state.route
-      const activeClass = this.state.currentActive
-      const inactiveClass = this.state.inactiveClass
         return (
             <AboutContainer>
 
@@ -162,12 +142,26 @@ export default class About extends React.Component {
                 About me 
               </Subtitle>
 
-              <AvatarContainer>
-                <Avatar img={Me}/>
-              </AvatarContainer>
-
               <AboutSection>
                 <AboutParagraphs>
+                  
+                  <div>
+                    {
+                      this.state.aboutMe.map((entry, i) => {
+                        return (
+                          <FavList>
+                            <FavTitle>
+                              {entry.title}
+                            </FavTitle>
+                            <FavData>
+                              {entry.data}
+                            </FavData>
+                          </FavList>
+                        )
+                      })
+                    }
+                  </div>
+
                   <Paragraph>
                     I'm a UCD Computer Science student. Currently in my penultimate year, expecting to graduate in September 2021.
                   </Paragraph>
@@ -177,84 +171,50 @@ export default class About extends React.Component {
                   </Paragraph>
 
                   <Paragraph>
-                    > Love learning
+                    Love learning
                     <br/>
-                    > Enthusiastic to solve complex challenges.
+                    Enthusiastic to solve complex challenges.
                     <br/>
-                    > Passion for eating and cooking.
+                    Passion for eating and cooking.
                     <br/>
-                    > Self-taught photographer
+                    Self-taught photographer
                     <br/>
-                    > Enjoy playing basketball and table tennis
+                    Enjoy playing basketball and table tennis
                   </Paragraph>
                 </AboutParagraphs>
 
                 <TechParagraph>
-                  <br/>
                   Technologies I've been working on recently
                 </TechParagraph>
 
-                <TechSelection>
+                <TechCards>
                   {
                     this.state.topics.map((topic, i) => {
                       return (
-                        <TechNav
-                          key={i}
-                          id={i}
-                          className={i === route ? "bg-light-gray bb" : " "}
-                          onClick={this.onNavClick}
-                        >
-                          <TechNavText>
-                            {topic}
-                          </TechNavText>
-                        </TechNav>
+                        <Card>
+                          <CardImage
+                            url={topic.img}
+                          />
+                            <CardDetails>
+                              <CardDT> 
+                                {topic.title}
+                              </CardDT>
+                                {
+                                  topic.data.map((entry, i) => {
+                                    return (
+                                      <CardDD>
+                                        {entry}
+                                      </CardDD>
+                                    )
+                                  })
+                                }
+                            </CardDetails>
+                        </Card>
                       )
                     })
                   }
-                </TechSelection>
-
-                <TechSection>
-                  <TechList>
-                    {
-                      this.state.currentTech.map((tech, i) => {
-                        return (
-                          <TechListItem
-                            key={i}
-                          >
-                            {tech}
-                          </TechListItem>
-                        )
-                      })
-                    }
-                  </TechList>
-                </TechSection>
+                </TechCards>
               </AboutSection>
-
-              <Section>
-                
-                {/*<Paragraph>
-                  <b>Hello!</b> I'm Braddy, an UCD computer science student based in Dublin, Ireland. 
-                  I was born in Penang, Malaysia. 
-                </Paragraph>
-                <Paragraph>
-                  I enjoy problem solving and tackling complex challenges. The learning process of understanding the problem, and breaking it down into solvable chunks is the reason to my enjoyment. 
-                  I enjoy learning in general, and in addition, enjoy teaching people what I learned and understood. 
-                </Paragraph>
-                <Paragraph>
-                  I love cooking and eating food. I will eat and try anything. My favorite food is definitely fried chicken. Growing up, I was exposed to cooking a lot, and it's great to come from a family who are mostly chefs.
-                  Super appreciative of friends and family who shared their cooking knowledge with me. If you also like cooking, lets cook together!
-                </Paragraph>
-                <Paragraph>
-                  In addition to cooking, I love taking photos. I was always mesmerized by the talented photographers on social media. The beauty of capturing a moment while incorporating artistic and creative aspects is truly wonderful.
-                </Paragraph>
-                <Paragraph>
-                  Sports. I play basketball, table tennis and badminton. I started learning table tennis recently. Super fun and fast paced sport. Would totally recommend.
-                </Paragraph>
-                <Paragraph>
-                  My goal right now is to become a successful computer scientist. I would like to work on technologies that improve human life, be it optimizing algorithms, developing new products or ensuring nothing goes down.
-                  I'm interested in AI, algorithms, automation and web development.
-                </Paragraph>*/}
-              </Section>
             </AboutContainer>
         )
     }
