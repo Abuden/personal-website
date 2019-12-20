@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PDF from './PDF';
 
 const OuterFlexColumn = styled.div.attrs({
     className: `avenir flex flex-column pt7 pb5`
@@ -137,6 +138,7 @@ export default class Work extends React.Component {
                         })
                     }
                 </InnerFlexColumn>
+                <PDF/>
             </OuterFlexColumn>
         )
     }
