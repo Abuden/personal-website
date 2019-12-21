@@ -83,6 +83,7 @@ export default class About extends React.Component {
                 "RESTful APIs",
                 "Node.js",
                 "PostgresSQL",
+                "MySQL",
                 "SAPUI5",
                 "Session Management"
               ]
@@ -97,7 +98,8 @@ export default class About extends React.Component {
                 "Ruby",
                 "JavaScript",
                 "BASH",
-                "SQL"
+                "SQL",
+                "Lisp",
               ]
             },
           ],
