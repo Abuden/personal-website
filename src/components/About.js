@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import MERN from '../assets/img/mern.jpg'
 import python from "../assets/img/python.jpg"
+import SAP from "../assets/img/sap.jpg"
 
 const AboutContainer = styled.div.attrs({
   className: `flex flex-column avenir pt7`
@@ -83,6 +84,10 @@ export default class About extends React.Component {
                 "RESTful APIs",
                 "Node.js",
                 "PostgresSQL",
+                "MongoDB",
+                "Styled-Components",
+                "Tachyons",
+                "Next.js"
                 "MySQL",
                 "SAPUI5",
                 "Session Management"
@@ -102,6 +107,14 @@ export default class About extends React.Component {
                 "Lisp",
               ]
             },
+            {
+              title: "SAP Technologies",
+              img: SAP,
+              data: [
+                "SAP HANA",
+                "SAP Fiori"
+              ]
+            }
           ],
           aboutMe: [
             {
@@ -109,12 +122,8 @@ export default class About extends React.Component {
               data: "21"
             },
             {
-              title: "Starsign",
-              data: "Leo"
-            },
-            {
               title: "Nationality",
-              data: "Malaysian & Ireland"
+              data: "Malaysian"
             },
             {
               title: "Hobbies",
@@ -122,7 +131,7 @@ export default class About extends React.Component {
             },
             {
               title: "Favorite Artists",
-              data: "Khalid, Mokita, Rich Brian"
+              data: "Khalid, Mokita, Rich Brian, Jackson Wang, Higher Brothers"
             }, 
             {
               title: "Favorite Food",
@@ -181,7 +190,7 @@ export default class About extends React.Component {
                     <br/>
                     Self-taught photographer
                     <br/>
-                    Enjoy playing basketball and table tennis
+                    Enjoy playing basketball, badminton and table tennis
                   </Paragraph>
                 </AboutParagraphs>
 
