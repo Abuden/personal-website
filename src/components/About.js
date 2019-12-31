@@ -178,6 +178,10 @@ export default class About extends React.Component {
                   </Paragraph>
 
                   <Paragraph>
+                    I am a SAP Certified Technology Associate - SAP HANA 2.0 (SPS03)
+                  </Paragraph>
+
+                  <Paragraph>
                     Goal is to continually improve as a software engineer and change people's life
                   </Paragraph>
 
