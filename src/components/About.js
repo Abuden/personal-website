@@ -87,7 +87,7 @@ export default class About extends React.Component {
                 "MongoDB",
                 "Styled-Components",
                 "Tachyons",
-                "Next.js"
+                "Next.js",
                 "MySQL",
                 "SAPUI5",
                 "Session Management"
