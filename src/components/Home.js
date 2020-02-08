@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Spring } from 'react-spring/renderprops'
 
 import Footer from './Footer';
 
@@ -38,7 +39,11 @@ export default class Home extends React.Component {
                 <Display>
                     <Text>
                         <Surname>Yeoh, I'm</Surname>
-                        <Forename>Braddy</Forename>
+                        <Spring
+                            from={{ opacity: 0 }}
+                            to={{ opacity: 1 }}>
+                            {props => <div style={props}><Forename>Braddy</Forename></div>}
+                        </Spring>
                         <TitleDiv>
                             <TitlesParagraph>
                                 UCD Computer Science

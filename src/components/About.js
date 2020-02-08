@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import MERN from '../assets/img/mern.jpg'
 import python from "../assets/img/python.jpg"
 import SAP from "../assets/img/sap.jpg"
+import BD from "../assets/img/bd.jpg"
 
 const AboutContainer = styled.div.attrs({
   className: `flex flex-column avenir pt7`
@@ -85,12 +86,10 @@ export default class About extends React.Component {
                 "Node.js",
                 "PostgresSQL",
                 "MongoDB",
-                "Styled-Components",
-                "Tachyons",
-                "Next.js",
                 "MySQL",
                 "SAPUI5",
-                "Session Management"
+                "Spring",
+                "Maven"
               ]
             },
             {
@@ -102,9 +101,10 @@ export default class About extends React.Component {
                 "Python",
                 "Ruby",
                 "JavaScript",
-                "BASH",
+                "Bash/Shell",
                 "SQL",
                 "Lisp",
+                "Assembly"
               ]
             },
             {
@@ -113,6 +113,13 @@ export default class About extends React.Component {
               data: [
                 "SAP HANA",
                 "SAP Fiori"
+              ]
+            },
+            {
+              title: "Big Data Programming",
+              img: BD,
+              data: [
+                "Hadoop"
               ]
             }
           ],

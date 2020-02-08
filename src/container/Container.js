@@ -45,9 +45,9 @@ export default class Container extends React.Component {
                         <Work/>
                     </FlexBox>
 
-                    {/*<FlexBox>
+                    {/* {<FlexBox>
                        <Projects/>
-                    </FlexBox>*/}
+                    </FlexBox>} */}
 
                     <FlexBox>
                         <Footer/>

@@ -53,15 +53,31 @@ export default class Work extends React.Component {
             route: 0,
             work: [
                 {
+                    role: "Demonstrator",
+                    place: "UCD",
+                    location: "Belfield",
+                    duration: "Sept 2019 - Dec 2019",
+                    link: "https://www.cs.ucd.ie/",
+                    details: [
+                        "•	Demonstrated Introduction to Programming I (C) and Introduction to Databases (MySQL)",
+                        "•	Supported student learning objectives through personalized and small group assistance.",
+                        "•	Coordinated with a team to tutor a class of 100 students",
+                        "•	Oversaw students in classroom and common areas to monitor, enforce rules and support lead teacher.",
+                        "•	Used behaviour modelling and specialized teaching techniques to share and reinforce social skills."
+                    ]
+                },
+                {
                     role: "SAP STAR Intern",
                     place: "SAP Ireland",
                     location: "Citywest",
                     duration: "May 2019 - Current",
                     link: "https://www.sap.com/index.html",
                     details: [
-                        "SAP HANA Product Support",
-                        "SAP Fiori Product Support",
-                        "Software Engineer on Augmented Analytics Team"
+                        "• Resolved system and customer issues by troubleshooting and providing effective solutions by taking 5 incidents per day.",
+                        "• Tested product components to identify root causes of issues.",
+                        "• Escalated complex problems such as failure of interdependent nodes in large production environments to management for resolution.",
+                        "• Managed customer relationships by delivering prompt responses to questions.",
+                        "• Provided technical troubleshooting and problem solving for clients with installed equipment/system issues."
                     ]
                 },
                 {
@@ -71,23 +87,11 @@ export default class Work extends React.Component {
                     duration: "Jun 2018 - Sep 2018",
                     link: "https://www.lamschinesedelivery.com",
                     details: [
-                        "Do Profit & Loss account for end of each week using Excel",
-                        "Assist manager by managing a team of 6 people to ensure highest of service",
-                        "Ensure report is updated",
-                        "Deal with any customer complaints and ensure problem is resolved peacefully"
-                    ]
-                },
-                {
-                    role: "Pizza Chef & Customer Service Specialist",
-                    place: "Apache Pizza and Lam's Cuisine",
-                    location: "Greystones",
-                    duration: "Jun 2016 - Jun 2018",
-                    link: "https://www.apache.ie",
-                    details: [
-                        "Prepared food in an efficient manner yet maintaining all safety and hygiene guidelines",
-                        "Worked as a team with other chefs to carry out orders",
-                        "Worked as a customer service specialist taking customers’ orders, dealing with complaints and being responsible for the money in the cashier",
-                        "Ensured customers knew the price of their order, the duration of their delivery or collection, and the current deals we offered"
+                        "•	Monitored cash intake and deposit records, increasing accuracy and reducing discrepancies.",
+                        "•	Supported staff development and goal attainment by focusing on skill development and job satisfaction.",
+                        "•	Coached team on effective upselling and cross-selling methods leading to 15% increase in sales.",
+                        "•	Monitored employee performance and developed improvement plans",
+                        "•	Submitted reports to senior management to aid in business decision-making and planning."
                     ]
                 },
             ],
