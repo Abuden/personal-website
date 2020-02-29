@@ -3,14 +3,16 @@ import styled from 'styled-components';
 
 const FooterContainer = styled.footer.attrs({
     className: `pv4 ph3 ph5-ns tc center`
-})``
+})
+``
 
 const SocialMediaIcon = styled.a.attrs({
     className: `link dark-gray dim dib h2 w2 mr3`,
     href: props => props.href,
     target: "_blank",
     title: props => props.title
-})``
+})
+``
 
 const SVG = styled.svg.attrs({
     fill: "currentColor",
@@ -21,19 +23,20 @@ const SVG = styled.svg.attrs({
     strokeLinejoin: "round",
     strokeMiterlimit: "1.414"
 
-})``
+})
+``
 
 const Path = styled.path.attrs({
     d: props => props.d,
     fillRule: props => props.fillRule
-})``
+})
+``
 
 export default class Footer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            svg: [
-                {
+            svg: [{
                     href: "https://www.facebook.com/YeohBrady",
                     title: "Facebook",
                     d: "M15.117 0H.883C.395 0 0 .395 0 .883v14.234c0 .488.395.883.883.883h7.663V9.804H6.46V7.39h2.086V5.607c0-2.066 1.262-3.19 3.106-3.19.883 0 1.642.064 1.863.094v2.16h-1.28c-1 0-1.195.476-1.195 1.176v1.54h2.39l-.31 2.416h-2.08V16h4.077c.488 0 .883-.395.883-.883V.883C16 .395 15.605 0 15.117 0",
@@ -46,7 +49,7 @@ export default class Footer extends React.Component {
                     fillRule: "nonzero"
                 },
                 {
-                    href: "https://github.com/Abuden?tab=repositories",
+                    href: "https://github.com/yeohbraddy?tab=repositories",
                     title: "GitHub",
                     d: "M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.083-.202-.358-1.015.077-2.117 0 0 .672-.215 2.2.82.638-.178 1.323-.266 2.003-.27.68.004 1.364.092 2.003.27 1.527-1.035 2.198-.82 2.198-.82.437 1.102.163 1.915.08 2.117.513.56.823 1.274.823 2.147 0 3.073-1.87 3.75-3.653 3.947.287.246.543.735.543 1.48 0 1.07-.01 1.933-.01 2.195 0 .215.144.463.55.385C13.71 14.53 16 11.534 16 8c0-4.418-3.582-8-8-8",
                     fillRule: ""
@@ -64,30 +67,36 @@ export default class Footer extends React.Component {
                     fillRule: "nonzero"
                 },
             ]
-        }   
+        }
     }
 
     render() {
-        return (
-            <FooterContainer>
-                {
-                    this.state.svg.map((entry, i) => {
-                        return (
-                            <SocialMediaIcon
-                                href={entry.href}
-                                title={entry.title}
-                            >
-                                <SVG>
-                                    <Path
-                                        d={entry.d}
-                                        fillRule={entry.fillRule}
-                                    />
-                                </SVG>
-                             </SocialMediaIcon>
-                        )
-                    })
-                }
-            </FooterContainer>
+        return ( <
+            FooterContainer > {
+                this.state.svg.map((entry, i) => {
+                    return ( <
+                        SocialMediaIcon href = {
+                            entry.href
+                        }
+                        title = {
+                            entry.title
+                        } >
+                        <
+                        SVG >
+                        <
+                        Path d = {
+                            entry.d
+                        }
+                        fillRule = {
+                            entry.fillRule
+                        }
+                        /> < /
+                        SVG > <
+                        /SocialMediaIcon>
+                    )
+                })
+            } <
+            /FooterContainer>
         )
     }
 }
