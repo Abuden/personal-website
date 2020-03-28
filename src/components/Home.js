@@ -1,67 +1,43 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Spring } from 'react-spring/renderprops'
+import Me from "../assets/img/Me.jpg"
 
 import Footer from './Footer';
 
 const Article = styled.article.attrs({
-    className: `avenir`
-})``
-
-const Display = styled.div.attrs({
-    className: `vh-100 dt w-100 tc bg-white dark-gray cover`
-})``
-
-const Text = styled.div.attrs({
-    className: `dtc v-mid`
-})``
-
-const Surname = styled.h3.attrs({
-    className: `fw3 f2 f2-ns gray`
-})``
-
-const Forename = styled.h1.attrs({
-    className: `f-headline fw3 f1 f1-ns black tracked grow`
-})``
-
-const TitleDiv = styled.div.attrs({
     className: ``
 })``
 
-const TitlesParagraph = styled.p.attrs({
-    className: `fw3 gray f5 f3-ns center bg-animate grow mb0 mt0`
+const Title = styled.p.attrs({
+    className: `f2 white ml2 fw3`
+})``
+
+const Test = styled.div.attrs({
+    className: `pl3 tl mt5`
+})``
+
+const List = styled.ul.attrs({
+    className: `pl4 white list`
+})``
+
+const Entry = styled.li.attrs({
+    className: `fw1`
 })``
 
 export default class Home extends React.Component {
     render() {
         return (
             <Article>
-                <Display>
-                    <Text>
-                        <Surname>Yeoh, I'm</Surname>
-                        <Spring
-                            from={{ opacity: 0 }}
-                            to={{ opacity: 1 }}>
-                            {props => <div style={props}><Forename>Braddy</Forename></div>}
-                        </Spring>
-                        <TitleDiv>
-                            <TitlesParagraph>
-                                UCD Computer Science
-                            </TitlesParagraph>
-                            <TitlesParagraph>
-                                Software Engineer
-                            </TitlesParagraph>
-                            <TitlesParagraph>
-                                Foodie
-                            </TitlesParagraph>
-                            <TitlesParagraph>
-                                Photographer
-                            </TitlesParagraph>
-                        </TitleDiv>
-                       
-                        <Footer/>
-                    </Text>
-                </Display>
+                <Test>
+                    <Title>Yeoh, I'm Braddy</Title>
+                    <List>
+                        <Entry>UCD Computer Science</Entry>
+                        <Entry>Software Engineer</Entry>
+                        <Entry>Photographer</Entry>
+                        <Entry>Foodie</Entry>
+                    </List>
+                </Test>
             </Article>
         )
     }

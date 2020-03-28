@@ -7,7 +7,7 @@ import SAP from "../assets/img/sap.jpg"
 import BD from "../assets/img/bd.jpg"
 
 const AboutContainer = styled.div.attrs({
-  className: `flex flex-column avenir pt7`
+  className: `flex flex-column avenir`
 })``
 
 const AboutSection = styled.div.attrs({
