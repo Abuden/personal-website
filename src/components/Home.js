@@ -1,68 +1,62 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Spring } from 'react-spring/renderprops'
 
-import Footer from './Footer';
+import FadeIn from 'react-fade-in';
+import Typical from 'react-typical';
 
-const Article = styled.article.attrs({
-    className: `avenir`
+import SocialMedia from './SocialMedia';
+
+const FlexDiv = styled.div.attrs({
+    className: `flex flex-column`
 })``
 
-const Display = styled.div.attrs({
-    className: `vh-100 dt w-100 tc bg-white dark-gray cover`
-})``
-
-const Text = styled.div.attrs({
-    className: `dtc v-mid`
-})``
-
-const Surname = styled.h3.attrs({
-    className: `fw3 f2 f2-ns gray`
-})``
-
-const Forename = styled.h1.attrs({
-    className: `f-headline fw3 f1 f1-ns black tracked grow`
+const Title = styled.p.attrs({
+    className: `white fw3 f-subheadline-ns lh-title f1`
 })``
 
 const TitleDiv = styled.div.attrs({
-    className: ``
+    className: `ml3 ml5-m ml6-ns mt5 tl`
 })``
 
-const TitlesParagraph = styled.p.attrs({
-    className: `fw3 gray f5 f3-ns center bg-animate grow mb0 mt0`
+const SubtitleDiv = styled.div.attrs({
+    className: `ml3 ml5-m ml6-ns tl`
 })``
 
-export default class Home extends React.Component {
-    render() {
-        return (
-            <Article>
-                <Display>
-                    <Text>
-                        <Surname>Yeoh, I'm</Surname>
-                        <Spring
-                            from={{ opacity: 0 }}
-                            to={{ opacity: 1 }}>
-                            {props => <div style={props}><Forename>Braddy</Forename></div>}
-                        </Spring>
-                        <TitleDiv>
-                            <TitlesParagraph>
-                                UCD Computer Science
-                            </TitlesParagraph>
-                            <TitlesParagraph>
-                                Software Engineer
-                            </TitlesParagraph>
-                            <TitlesParagraph>
-                                Foodie
-                            </TitlesParagraph>
-                            <TitlesParagraph>
-                                Photographer
-                            </TitlesParagraph>
-                        </TitleDiv>
-                       
-                        <Footer/>
-                    </Text>
-                </Display>
-            </Article>
-        )
-    }
+const Subtitle = styled.p.attrs({
+    className: `white fw3 ml4-ns ml3 f2 lh-copy`
+})``
+
+const SocialMediaDiv = styled.div.attrs({
+    className: `ml4 ml5-m ml6-ns`
+})``
+
+const TEXTS = [
+    "Software Engineer", 1000,
+    "Photographer", 1000,
+    "Foodie", 1000,
+    "UCD Computer Science", 1000
+]
+
+export default function Home() {
+    return (
+        <FlexDiv>
+            <TitleDiv>
+                <FadeIn delay="400" transitionDuration="1250">
+                    <Title>Yeoh, I'm Braddy</Title>
+                </FadeIn>
+            </TitleDiv>
+            <SubtitleDiv>
+                <Subtitle>
+                    <Typical 
+                        steps={TEXTS}
+                        loop={Infinity}
+                        wrapper="p"
+                    />
+                </Subtitle>
+            </SubtitleDiv>
+            <SocialMediaDiv>
+                <SocialMedia/>
+            </SocialMediaDiv>
+        </FlexDiv>
+    )
 }
