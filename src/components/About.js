@@ -1,184 +1,243 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import Carousel from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
-import { ReactSVG } from 'react-svg';
 
-import Me from "../assets/img/Me.jpg";
+import MERN from '../assets/img/mern.jpg'
+import python from "../assets/img/python.jpg"
+import SAP from "../assets/img/sap.jpg"
+import BD from "../assets/img/bd.jpg"
 
-import CameraSVG from '../assets/svg/photo-camera.svg'
-import Database from '../assets/svg/database.svg'
-import WebDev from '../assets/svg/browser-26.svg'
-import SAP from '../assets/svg/server.svg'
-import Scripting from '../assets/svg/laptop-42.svg'
-import Testing from '../assets/svg/browser-18.svg'
+const AboutContainer = styled.div.attrs({
+  className: `flex flex-column avenir pt7`
+})``
 
-const Container = styled.div.attrs({
+const AboutSection = styled.div.attrs({
   className: `flex flex-column`
 })``
 
-const AboutContainer = styled.div.attrs({
-  className: `flex flex-wrap w-80-ns center mt6 mb5-ns`
+const AboutParagraphs = styled.div.attrs({
+  className: `flex flex-column flex-wrap-ns`
 })``
 
-const ImgDiv = styled.div.attrs({
-  className: `tr-l tc pr5-l w-50-l w-100`
+const TechCards = styled.div.attrs({
+  className: `flex flex-wrap`
 })``
 
-const Img = styled.img.attrs({
-  className: `w-70 w-100-m outline`,
-  src: props => props.src
+const Subtitle = styled.div.attrs({
+  className: `tc fw2 f1 pt5 pb3 bb w-100 mb5 f2 tracked`
 })``
 
-const AboutDiv = styled.div.attrs({
-  className: `flex flex-column w-50-l w-100 pa3`
+const Paragraph = styled.p.attrs({
+  className: `w-100 pt4 lh-copy fw4 dark-gray f4 f3-ns tj tc-ns center`
 })``
 
-const AboutTitle = styled.p.attrs({
-  className: `f3 tl-ns tc fw3 tracked` 
+const TechParagraph = styled.p.attrs({
+  className: `tc center lh-copy fw4 f4 f3-ns dark-gray tracked pt6 pb4`
 })``
 
-const AboutSubtitle = styled.p.attrs({
-  className: `f4 tj fw3 tracked pb2`
+const Card = styled.div.attrs({
+  className: `db center mw5 tc black grow`
 })``
 
-const CarouselDiv = styled.div.attrs({
-  className: `bg-near-white tl-ns tc pa3 w-50-ns w-100`
+const CardImage = styled.img.attrs({
+  className: `db ba b--black-10`,
+  src: props => props.url
 })``
 
-const CarouselTitle = styled.p.attrs({
-  className: `f3`
+const CardDetails = styled.dl.attrs({
+  className: `mt2 lh-copy pb5 `
 })``
 
-const CarouselList = styled.ul.attrs({
-  className: `list`
-})`
-  margin: 0;
-  padding: 0;
-`
+const CardDT = styled.dt.attrs({
+  className: `f4 f3-ns tracked fw5 bb mb3 pb2`
+})``
 
-const CarouselListEntry = styled.li.attrs({
-  className: `f4 fw3`
-})`
-  margin: 0;
-  padding: 0;
-`
+const CardDD = styled.dd.attrs({
+  className: `tc center f4 f3-ns fw3`
+})``
 
-function About() {
+const FavList = styled.dl.attrs({
+  className: `lh-title pa2 mt0 center tc`
+})``
 
-  const [slideText, useSlideText] = useState([
-    {
-      svg: WebDev,
-      title: 'Web Development',
-      subtitle: ['MERN', 'Spring', 'Maven', 'Docker', 'MySQL', 'PosgresSQL']
-    },
-    {
-      svg: Database,
-      title: 'Big Data',
-      subtitle: ['Spark', 'Hadoop']
-    },
-    {
-      svg: SAP,
-      title: 'SAP',
-      subtitle: ['Certified SAP HANA Consultant', 'SAP Fiori', 'SAP Analytics Cloud']
-    },
-    {
-      svg: CameraSVG,
-      title: 'Photography',
-      subtitle: ['I take pictures']
-    },
-    {
-      svg: Scripting,
-      title: 'Scripting',
-      subtitle: ['BeautifulSoup', 'Bash']
-    },
-    {
-      svg: Testing,
-      title: 'Testing',
-      subtitle: ['Selenium', 'Robot Framework', 'Jenkins', 'JUnit']
-    }
-  ])
+const FavTitle = styled.dt.attrs({
+  className: `f4 f3-ns b`
+})``
 
-  const [aboutSubtitle, useAboutSubtitle] = useState([
-    {
-      subtitle: 'Born in Penang, Malaysia, now currently living and studying in Ireland. I study in UCD and currently a SAP SWE Intern. I enjoy cooking, coding and learning new skills.'
-    },
-    {
-      subtitle: 'I\'m interested in the areas of intelligent systems and distributed systems'
-    },
-    {
-      subtitle: 'When I am not not glued to coding or stuck in tutorial hell, I like watching movies and TV shows or playing video games.'
-    },
-    {
-      subtitle: 'Outside of those, I enjoy doing volunteering work and helping people'
-    }
-  ])
+const FavData = styled.dd.attrs({
+  className: `f4 f3-ns ml0 pt1`
+})``
 
-  return (  
-    <Container>
-      <AboutContainer>
-        <ImgDiv>
-          <Img src={Me}/>
-        </ImgDiv>
-        <AboutDiv>
-            <AboutTitle><b>Hi, I'm Braddy</b>, a computer science student interested in creating solutions that improve daily lives</AboutTitle>
+
+
+/* Need to fix media queries here */
+
+export default class About extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+          topics: [
             {
-              aboutSubtitle.map(elem => {
-                return (
-                  <AboutSubtitle>{elem.subtitle}</AboutSubtitle>
-                )
-              })
+              title: "Web Development",
+              img: MERN,
+              data: [
+                "React/Redux",
+                "Express.js",
+                "RESTful APIs",
+                "Node.js",
+                "PostgresSQL",
+                "MongoDB",
+                "MySQL",
+                "SAPUI5",
+                "Spring",
+                "Maven"
+              ]
+            },
+            {
+              title: "Programming Languages",
+              img: python,
+              data: [
+                "C",
+                "Java",
+                "Python",
+                "Ruby",
+                "JavaScript",
+                "Bash/Shell",
+                "SQL",
+                "Lisp",
+                "Assembly"
+              ]
+            },
+            {
+              title: "SAP Technologies",
+              img: SAP,
+              data: [
+                "SAP HANA",
+                "SAP Fiori"
+              ]
+            },
+            {
+              title: "Big Data Programming",
+              img: BD,
+              data: [
+                "Hadoop"
+              ]
             }
-        </AboutDiv>
-      </AboutContainer>
-      <Carousel
-        className='mb3'
-        dots
-        clickToChange
-        slidesPerPage={4}
-        infinite
-        autoPlay={3000}
-        animationSpeed={2000}
-        breakpoints={{
-          640: {
-            slidesPerPage: 1
-          },
-          900: {
-            slidesPerPage: 2
-          }
-        }}
-      >
-        {
-          slideText.map(elem => {
-            return (
-              <CarouselDiv>
-                <ReactSVG 
-                  src={elem.svg}
-                  beforeInjection={svg => {
-                    svg.setAttribute('style', 'width: 40px')
-                  }}
-                />
-                <CarouselTitle>
-                  {elem.title}
-                </CarouselTitle>
-                <CarouselList>
+          ],
+          aboutMe: [
+            {
+              title: "Age",
+              data: "21"
+            },
+            {
+              title: "Nationality",
+              data: "Malaysian"
+            },
+            {
+              title: "Hobbies",
+              data: "Programming, Video Games, Music, Eating, Photography, Sports"
+            },
+            {
+              title: "Favorite Artists",
+              data: "Khalid, Mokita, Rich Brian, Jackson Wang, Higher Brothers"
+            }, 
+            {
+              title: "Favorite Food",
+              data: "Fried Chicken"
+            },
+            {
+              title: "Favorite Drinks",
+              data: "Taro Bubble Tea, Green Tea, Water"
+            }
+          ]
+        }
+    }
+
+    render() {
+        return (
+            <AboutContainer>
+
+              <Subtitle> 
+                About me 
+              </Subtitle>
+
+              <AboutSection>
+                <AboutParagraphs>
+                  
+                  <div>
+                    {
+                      this.state.aboutMe.map((entry, i) => {
+                        return (
+                          <FavList>
+                            <FavTitle>
+                              {entry.title}
+                            </FavTitle>
+                            <FavData>
+                              {entry.data}
+                            </FavData>
+                          </FavList>
+                        )
+                      })
+                    }
+                  </div>
+
+                  <Paragraph>
+                    I'm a UCD Computer Science student. Currently in my penultimate year, expecting to graduate in September 2021.
+                  </Paragraph>
+
+                  <Paragraph>
+                    I am a SAP Certified Technology Associate - SAP HANA 2.0 (SPS03)
+                  </Paragraph>
+
+                  <Paragraph>
+                    Goal is to continually improve as a software engineer and change people's life
+                  </Paragraph>
+
+                  <Paragraph>
+                    Love learning
+                    <br/>
+                    Enthusiastic to solve complex challenges.
+                    <br/>
+                    Passion for eating and cooking.
+                    <br/>
+                    Self-taught photographer
+                    <br/>
+                    Enjoy playing basketball, badminton and table tennis
+                  </Paragraph>
+                </AboutParagraphs>
+
+                <TechParagraph>
+                  Technologies I've been working on recently
+                </TechParagraph>
+
+                <TechCards>
                   {
-                    elem.subtitle.map(entry => {
+                    this.state.topics.map((topic, i) => {
                       return (
-                        <CarouselListEntry>
-                          {entry}
-                        </CarouselListEntry>
+                        <Card>
+                          <CardImage
+                            url={topic.img}
+                          />
+                            <CardDetails>
+                              <CardDT> 
+                                {topic.title}
+                              </CardDT>
+                                {
+                                  topic.data.map((entry, i) => {
+                                    return (
+                                      <CardDD>
+                                        {entry}
+                                      </CardDD>
+                                    )
+                                  })
+                                }
+                            </CardDetails>
+                        </Card>
                       )
                     })
                   }
-                </CarouselList>
-            </CarouselDiv>
-            )
-          })
-        }
-      </Carousel>
-    </Container>
-  );
+                </TechCards>
+              </AboutSection>
+            </AboutContainer>
+        )
+    }
 }
-
-export default About;
