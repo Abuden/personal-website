@@ -1,129 +1,105 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { ReactSVG } from 'react-svg';
 
-const ProjectContainer = styled.div.attrs({
-    className: `flex flex-column pt7`
+import BlogSVG from '../assets/svg/032-document-1.svg'
+import QuizSVG from '../assets/svg/005-checklist-2.svg'
+import EcommerceSVG from '../assets/svg/shopping-cart.svg'
+import FaceDetectSVG from '../assets/svg/025-conference-2.svg'
+
+const Container = styled.div.attrs({
+    className: `flex flex-column`
 })``
 
-const CardContainer = styled.article.attrs({
-    className: `br2 child w-100 vh-25 center h-100 bg-black-50`
-})``
-
-const Img = styled.img.attrs({
-    className: `db w-100 br2 br--top`,
-    alt: "Photo of a kitten looking menacing.",
-    src: "http://placekitten.com/g/600/300"
+const ProjectDiv = styled.div.attrs({
+    className: `flex-auto-ns flex flex-wrap pa3`
 })``
 
 const Card = styled.div.attrs({
-    className: `pa2 ph3-ns pb3-ns pt4`
-})``
-
-const TextContainer = styled.div.attrs({
-    className: `dt w-100 mt1 top-6`
-})``
-
-const TitleContainer = styled.div.attrs({
-    className: `dtc top-6`
-})``
-
-const Title = styled.h1.attrs({
-    className: `fw4 f3 white avenir tc ttu`
-})``
-
-const Details = styled.p.attrs({
-    className: `f4 fw4 lh-copy measure mt2 white avenir tc center`
-})``
-
-const Language = styled.p.attrs({
-    className: `avenir white fw3 f3 tc`
-})``
-
-const Subtitle = styled.div.attrs({
-    className: `avenir center fw3 f1 pt5 pb3 pl4 bb w-100 mb5`
-})``
-
-const ProjectSection = styled.div.attrs({
-    className: `flex flex-wrap`
-})``
-
-const RepoContainer = styled.div.attrs({
-    className: `center shadow-5 w-100 vh-25 pb3`
+    className: `fl w-20-ns w-100 pa2 center`
 })``
 
 const Link = styled.a.attrs({
-    className: `link w-100 dt hide-child br2 cover bg-center pointer`,
-    href: props => props.url,
-    target: "_blank"
+    className: `db link dim tc`,
+    href: props => props.href,
+    target: `_blank`
 })``
 
-const HiddenContent = styled.span.attrs({
-    className: `white b dtc v-mid w-100 h-100 child bg-black-40 pa5 br2`
+const DescList = styled.dl.attrs({
+    className: `mt2 f6 lh-copy`
 })``
 
-export default class Project extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            repos: []
+const ProjectName = styled.dd.attrs({
+    className: `ml0 black truncate w-100 f5`
+})``
+
+const ProjectType = styled.dd.attrs({
+    className: `ml0 gray truncate w-100 f6`
+})``
+
+const LinkDiv = styled.div.attrs({
+    className: `tc mv4`
+})``
+
+const GithubLink = styled.a.attrs({
+    className: `fw3 f3 pointer link dim black`,
+    href: `https://github.com/yeohbraddy?tab=repositories`,
+    target: `_blank`
+})``
+
+export default function Project() {
+
+    const [projects, useProjects] = useState([
+        {
+            href: 'https://blog.yeohbraddy.com',
+            imgSrc: BlogSVG,
+            projectName: 'Blog',
+            projectType: 'Gatsby'
+        },
+        {
+            href: 'https://www.quiz.yeohbraddy.com/',
+            imgSrc: QuizSVG,
+            projectName: 'AWS CP Quiz',
+            projectType: 'React'
+        },
+        {
+            href: 'https://shop-braddy.herokuapp.com/',
+            imgSrc: EcommerceSVG,
+            projectName: 'E-Commerce',
+            projectType: 'React | NodeJS | Firebase'
+        },
+        {
+            href: 'https://smart-brain-8562.herokuapp.com/',
+            imgSrc: FaceDetectSVG,
+            projectName: 'Face Detection',
+            projectType: 'React | NodeJS | PostgresSQL'
         }
-    }
+    ])
 
-    /* Reached API limit */
-    componentDidMount() {
-        fetch("https://api.github.com/users/Abuden/repos?sort=pushed")
-		.then(resp => resp.json())
-        .then(result => {
-            console.log(result)
-            this.setState({
-                repos: result
-            })
-        })
-    }
-
-    render() {
-        let repos = this.state.repos
-        return (
-            <ProjectContainer>
-                <Subtitle>
-                    Projects
-                </Subtitle>
-                <ProjectSection>
-                    {
-                        repos.length === 0 
-                        ? <h1>Loading</h1> 
-                        :
-                            repos.map((repo, i) => {
-                                return (
-                                    <RepoContainer>
-                                        <Link 
-                                            url={repo.html_url}
-                                            style={{backgroundImage: "url('http://mrmrs.github.io/photos/012.jpg')"}}
-                                        >
-                                            <CardContainer>
-                                                <Card>
-                                                    <TextContainer>
-                                                        <TitleContainer>
-                                                            <Title>
-                                                                {repo.name}
-                                                            </Title>
-                                                        </TitleContainer>
-                                                    </TextContainer>
-                                                    <Details>
-                                                        {repo.description}
-                                                    </Details>
-                                                    <Language>
-                                                        {repo.language}
-                                                    </Language>
-                                                </Card>        
-                                            </CardContainer>
-                                        </Link>
-                                    </RepoContainer>
-                                )
-                            })
-                    }
-                </ProjectSection>
-            </ProjectContainer>
-        )
-    }
+    return (
+        <Container>
+            <ProjectDiv>
+                {
+                    projects.map(elem => {
+                        return (
+                            <Card>
+                                <Link href={elem.href}>
+                                <ReactSVG src={elem.imgSrc}/>
+                                <DescList>
+                                    <ProjectName>{elem.projectName}</ProjectName>
+                                    <ProjectType>{elem.projectType}</ProjectType>
+                                </DescList>
+                                </Link>
+                            </Card>
+                        )
+                    })
+                }
+            </ProjectDiv>
+            <LinkDiv>
+                <GithubLink>
+                    View more on Github
+                </GithubLink>
+            </LinkDiv>
+        </Container>
+    )
 }

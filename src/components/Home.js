@@ -1,44 +1,62 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Spring } from 'react-spring/renderprops'
-import Me from "../assets/img/Me.jpg"
 
-import Footer from './Footer';
+import FadeIn from 'react-fade-in';
+import Typical from 'react-typical';
 
-const Article = styled.article.attrs({
-    className: ``
+import SocialMedia from './SocialMedia';
+
+const FlexDiv = styled.div.attrs({
+    className: `flex flex-column`
 })``
 
 const Title = styled.p.attrs({
-    className: `f2 white ml2 fw3`
+    className: `white fw3 f-subheadline-ns lh-title f1`
 })``
 
-const Test = styled.div.attrs({
-    className: `pl3 tl mt5`
+const TitleDiv = styled.div.attrs({
+    className: `ml3 ml5-m ml6-ns mt5 tl`
 })``
 
-const List = styled.ul.attrs({
-    className: `pl4 white list`
+const SubtitleDiv = styled.div.attrs({
+    className: `ml3 ml5-m ml6-ns tl`
 })``
 
-const Entry = styled.li.attrs({
-    className: `fw1`
+const Subtitle = styled.p.attrs({
+    className: `white fw3 ml4-ns ml3 f2 lh-copy`
 })``
 
-export default class Home extends React.Component {
-    render() {
-        return (
-            <Article>
-                <Test>
+const SocialMediaDiv = styled.div.attrs({
+    className: `ml4 ml5-m ml6-ns`
+})``
+
+const TEXTS = [
+    "Software Engineer", 1000,
+    "Photographer", 1000,
+    "Foodie", 1000,
+    "UCD Computer Science", 1000
+]
+
+export default function Home() {
+    return (
+        <FlexDiv>
+            <TitleDiv>
+                <FadeIn delay="400" transitionDuration="1250">
                     <Title>Yeoh, I'm Braddy</Title>
-                    <List>
-                        <Entry>UCD Computer Science</Entry>
-                        <Entry>Software Engineer</Entry>
-                        <Entry>Photographer</Entry>
-                        <Entry>Foodie</Entry>
-                    </List>
-                </Test>
-            </Article>
-        )
-    }
+                </FadeIn>
+            </TitleDiv>
+            <SubtitleDiv>
+                <Subtitle>
+                    <Typical 
+                        steps={TEXTS}
+                        loop={Infinity}
+                        wrapper="p"
+                    />
+                </Subtitle>
+            </SubtitleDiv>
+            <SocialMediaDiv>
+                <SocialMedia/>
+            </SocialMediaDiv>
+        </FlexDiv>
+    )
 }

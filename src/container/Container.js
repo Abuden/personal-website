@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import ResponsiveGallery from 'react-responsive-gallery';
+
 import Home from '../components/Home';
 import About from '../components/About';
-import Work from '../components/Work';
 import Projects from '../components/Project';
 import Footer from '../components/Footer';
-import HomeImg from "../assets/img/Home.jpg";
-import Me from "../assets/img/Me.jpg"
+import Title from '../components/Title';
+import photos from '../components/Photos'
+
+import HomeImg from "../assets/img/food.jpeg";
 
 const FlexContainer = styled.div.attrs({
     className: `flex flex-column`
@@ -17,41 +20,46 @@ const FlexBox = styled.div.attrs({
     className: `w-100 center mr2 h-100`,
 })``
 
-export default class Container extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            components: [
-                <Home/>,
-                <About/>,
-                <Work/>,
-                <Projects/>,
-                <Footer/>
-            ]
-        }
-    }
+const FlexBoxBgWhite = styled.div.attrs({
+    className: `w-100 center mr2 h-100 bg-near-white mb3`
+})``
 
-    render() {
-        return (
-            <FlexContainer>
-                    <FlexBox style={{height: "650px", backgroundImage: `url('${HomeImg}')`, backgroundSize: "contain", backgroundRepeat: "no-repeat"}}>
-                        <Home/>
-                    </FlexBox>
-                    <FlexBox>
-                        <About/>
-                    </FlexBox>
-                    <FlexBox>
-                        <Work/>
-                    </FlexBox>
+const GalleryFlex = styled.div.attrs({
+    className: `w-100 center mr2 h-100 ph5-ns mb5`
+})``
 
-                    {/* {<FlexBox>
-                       <Projects/>
-                    </FlexBox>} */}
+export default function Container() {
+    return (
+        <FlexContainer>
+                <FlexBox 
+                    style={{
+                        height: "1000px", 
+                        backgroundImage: `url('${HomeImg}')`, 
+                        backgroundSize: "cover", 
+                        backgroundAttachment: "fixed", 
+                        backgroundPosition: "center center", 
+                        backgroundRepeat: "no-repeat"
+                    }}>
+                    <Home/>
+                </FlexBox>
 
-                    <FlexBox>
-                        <Footer/>
-                    </FlexBox>
-            </FlexContainer>
-        )
-    }   
+                <FlexBoxBgWhite>
+                    <About/>
+                </FlexBoxBgWhite>
+
+                <GalleryFlex>
+                    <Title title='Photography'/>
+                    <ResponsiveGallery images={photos}/>
+                </GalleryFlex>
+
+                <FlexBoxBgWhite>
+                    <Title title='Live Projects'/>
+                    <Projects/>
+                </FlexBoxBgWhite>
+
+                <FlexBox>
+                    <Footer/>
+                </FlexBox>
+        </FlexContainer>
+    )
 }
