@@ -1,4 +1,4 @@
-# Personal Website V3
+# Personal Website
 
 Updated personal website made using ReactJS, Styled Components and Tachyons
 
