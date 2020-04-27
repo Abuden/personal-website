@@ -6,29 +6,25 @@ import Typical from 'react-typical';
 
 import SocialMedia from './SocialMedia';
 
-const FlexDiv = styled.div.attrs({
+const FlexDiv = styled.div.attrs(props => ({
     className: `flex flex-column`
-})``
+}))``
 
-const Title = styled.p.attrs({
+const Title = styled.p.attrs(props => ({
     className: `white fw3 f-subheadline-ns lh-title f1`
-})``
+}))``
 
-const TitleDiv = styled.div.attrs({
+const TitleDiv = styled.div.attrs(props => ({
     className: `ml3 ml5-m ml6-ns mt5 tl`
-})``
+}))``
 
-const SubtitleDiv = styled.div.attrs({
+const SubtitleDiv = styled.div.attrs(props => ({
     className: `ml3 ml5-m ml6-ns tl`
-})``
+}))``
 
-const Subtitle = styled.p.attrs({
-    className: `white fw3 ml4-ns ml3 f2 lh-copy`
-})``
-
-const SocialMediaDiv = styled.div.attrs({
+const SocialMediaDiv = styled.div.attrs(props => ({
     className: `ml4 ml5-m ml6-ns`
-})``
+}))``
 
 const TEXTS = [
     "Software Engineer", 1000,
@@ -46,13 +42,12 @@ export default function Home() {
                 </FadeIn>
             </TitleDiv>
             <SubtitleDiv>
-                <Subtitle>
-                    <Typical 
-                        steps={TEXTS}
-                        loop={Infinity}
-                        wrapper="p"
-                    />
-                </Subtitle>
+                <Typical 
+                    className='white fw3 ml4-ns ml3 f2 lh-copy'
+                    steps={TEXTS}
+                    loop={Infinity}
+                    wrapper="p"
+                />
             </SubtitleDiv>
             <SocialMediaDiv>
                 <SocialMedia/>

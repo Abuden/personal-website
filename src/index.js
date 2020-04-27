@@ -5,7 +5,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import tachyons from 'tachyons';
-import styled from 'styled-components';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

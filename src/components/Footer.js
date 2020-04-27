@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const FooterContainer = styled.footer.attrs({
-    className: `tc bg-center cover bg-black`
-})`
-    background-image: url('http://i.giphy.com/l1J3ThqHNWUVtZV1m.gif');
-`
+const FooterContainer = styled.footer.attrs(props => ({
+    className: `tc bg-center cover bg-black`,
+}))``
 
-const IconDiv = styled.div.attrs({
-    className: `w-100 ph3 pt5 pb4 bg-black-80`
-})``
+const IconDiv = styled.div.attrs(props => ({
+    className: `w-100 ph3 pt5 pb4`
+}))``
 
-const IconLink = styled.a.attrs({
-    className: `link white-60 bg-transparent hover-white inline-flex items-center ma2 tc br2 pa2`,
+const IconLink = styled.a.attrs(props => ({
+    className: `link white bg-transparent dim inline-flex items-center ma2 tc br2 pa2`,
     href: props => props.href
-})``
+}))``
 
-const IconSVG = styled.svg.attrs({
+const IconSVG = styled.svg.attrs(props => ({
     className: `dib h2 w2`,
     fill: `currentColor`,
     xmlns: `http://www.w3.org/2000/svg`,
@@ -25,53 +23,53 @@ const IconSVG = styled.svg.attrs({
     clipRule: `evenodd`,
     strokeLinejoin: `round`,
     strokeMiterlimit: `1.414`
-})``
+}))``
 
-const IconText = styled.span.attrs({
+const IconText = styled.span.attrs(props => ({
     className: `f6 ml3 pr2`
-})``
+}))``
 
-const Path = styled.path.attrs({
+const Path = styled.path.attrs(props => ({
     className: ``,
     d: props => props.d,
     fillRule: `nonzero`
-})``
+}))``
 
-const ContactDiv = styled.div.attrs({
+const ContactDiv = styled.div.attrs(props => ({
     className: `flex flex-column pb5`
-})``
+}))``
 
-const ContactText = styled.p.attrs({
+const ContactText = styled.p.attrs(props => ({
     className: `f4 fw3 white`
-})``
+}))``
 
-const InputDiv = styled.div.attrs({
+const InputDiv = styled.div.attrs(props => ({
     className: `w-50-ns w-70 center`
-})``
+}))``
 
-const Input = styled.input.attrs({
-    className: `w-100 pv3 ph2 mb3`,
+const Input = styled.input.attrs(props => ({
+    className: `w-100 pv3 ph2 mb3 dim`,
     type: 'text',
     placeholder: props => props.placeholder
-})``
+}))``
 
-const TextArea = styled.textarea.attrs({
-    className: `w-100 pv3 ph2`,
+const TextArea = styled.textarea.attrs(props => ({
+    className: `w-100 pv3 ph2 dim`,
     rows: `5`,
     placeholder: props => props.placeholder
-})``
+}))``
 
-const SendBtnDiv = styled.div.attrs({
-    className: `tr mt3 `
-})``
+const SendBtnDiv = styled.div.attrs(props => ({
+    className: `tr mt3`
+}))``
 
-const SendBtn = styled.a.attrs({
+const SendBtn = styled.a.attrs(props => ({
     className: `no-underline pointer black bg-white dim inline-flex items-center pa3 `
-})``
+}))``
 
 export default function Footer() {
 
-    const [icons, useIcons] = useState([
+    const [icons] = useState([
         {
             name: 'Facebook',
             href: 'https://facebook.com',
@@ -105,9 +103,12 @@ export default function Footer() {
         <FooterContainer>
             <IconDiv>
                 {
-                    icons.map(icon => {
+                    icons.map((icon, key) => {
                         return (
-                            <IconLink href={icon.href}>
+                            <IconLink 
+                                key={key}
+                                href={icon.href}
+                            >
                                 <IconSVG>
                                     <Path d={icon.d}/>
                                 </IconSVG>

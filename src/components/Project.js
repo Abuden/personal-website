@@ -7,49 +7,49 @@ import QuizSVG from '../assets/svg/005-checklist-2.svg'
 import EcommerceSVG from '../assets/svg/shopping-cart.svg'
 import FaceDetectSVG from '../assets/svg/025-conference-2.svg'
 
-const Container = styled.div.attrs({
+const Container = styled.div.attrs(props => ({
     className: `flex flex-column`
-})``
+}))``
 
-const ProjectDiv = styled.div.attrs({
+const ProjectDiv = styled.div.attrs(props => ({
     className: `flex-auto-ns flex flex-wrap pa3`
-})``
+}))``
 
-const Card = styled.div.attrs({
+const Card = styled.div.attrs(props => ({
     className: `fl w-20-ns w-100 pa2 center`
-})``
+}))``
 
-const Link = styled.a.attrs({
+const Link = styled.a.attrs(props => ({
     className: `db link dim tc`,
     href: props => props.href,
     target: `_blank`
-})``
+}))``
 
-const DescList = styled.dl.attrs({
+const DescList = styled.dl.attrs(props => ({
     className: `mt2 f6 lh-copy`
-})``
+}))``
 
-const ProjectName = styled.dd.attrs({
+const ProjectName = styled.dd.attrs(props => ({
     className: `ml0 black truncate w-100 f5`
-})``
+}))``
 
-const ProjectType = styled.dd.attrs({
+const ProjectType = styled.dd.attrs(props => ({
     className: `ml0 gray truncate w-100 f6`
-})``
+}))``
 
-const LinkDiv = styled.div.attrs({
+const LinkDiv = styled.div.attrs(props => ({
     className: `tc mv4`
-})``
+}))``
 
-const GithubLink = styled.a.attrs({
+const GithubLink = styled.a.attrs(props => ({
     className: `fw3 f3 pointer link dim black`,
     href: `https://github.com/yeohbraddy?tab=repositories`,
     target: `_blank`
-})``
+}))``
 
 export default function Project() {
 
-    const [projects, useProjects] = useState([
+    const [projects] = useState([
         {
             href: 'https://blog.yeohbraddy.com',
             imgSrc: BlogSVG,
@@ -80,9 +80,9 @@ export default function Project() {
         <Container>
             <ProjectDiv>
                 {
-                    projects.map(elem => {
+                    projects.map((elem, key) => {
                         return (
-                            <Card>
+                            <Card key={key}>
                                 <Link href={elem.href}>
                                 <ReactSVG src={elem.imgSrc}/>
                                 <DescList>

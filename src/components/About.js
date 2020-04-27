@@ -13,60 +13,60 @@ import SAP from '../assets/svg/server.svg'
 import Scripting from '../assets/svg/laptop-42.svg'
 import Testing from '../assets/svg/browser-18.svg'
 
-const Container = styled.div.attrs({
+const Container = styled.div.attrs(props => ({
   className: `flex flex-column`
-})``
+}))``
 
-const AboutContainer = styled.div.attrs({
+const AboutContainer = styled.div.attrs(props => ({
   className: `flex flex-wrap w-80-ns center mt6 mb5-ns`
-})``
+}))``
 
-const ImgDiv = styled.div.attrs({
+const ImgDiv = styled.div.attrs(props => ({
   className: `tr-l tc pr5-l w-50-l w-100`
-})``
+}))``
 
-const Img = styled.img.attrs({
+const Img = styled.img.attrs(props => ({
   className: `w-70 w-100-m outline`,
   src: props => props.src
-})``
+}))``
 
-const AboutDiv = styled.div.attrs({
+const AboutDiv = styled.div.attrs(props => ({
   className: `flex flex-column w-50-l w-100 pa3`
-})``
+}))``
 
-const AboutTitle = styled.p.attrs({
+const AboutTitle = styled.p.attrs(props => ({
   className: `f3 tl-ns tc fw3 tracked` 
-})``
+}))``
 
-const AboutSubtitle = styled.p.attrs({
+const AboutSubtitle = styled.p.attrs(props => ({
   className: `f4 tj fw3 tracked pb2`
-})``
+}))``
 
-const CarouselDiv = styled.div.attrs({
-  className: `bg-near-white tl-ns tc pa3 w-50-ns w-100`
-})``
+const CarouselDiv = styled.div.attrs(props => ({
+  className: `bg-near-white tl-ns tc pa3 w-50-ns w-100 `
+}))``
 
-const CarouselTitle = styled.p.attrs({
+const CarouselTitle = styled.p.attrs(props => ({
   className: `f3`
-})``
+}))``
 
-const CarouselList = styled.ul.attrs({
+const CarouselList = styled.ul.attrs(props => ({
   className: `list`
-})`
+}))`
   margin: 0;
   padding: 0;
 `
 
-const CarouselListEntry = styled.li.attrs({
+const CarouselListEntry = styled.li.attrs(props => ({
   className: `f4 fw3`
-})`
+}))`
   margin: 0;
   padding: 0;
 `
 
-function About() {
+export default function About() {
 
-  const [slideText, useSlideText] = useState([
+  const [slideText] = useState([
     {
       svg: WebDev,
       title: 'Web Development',
@@ -99,7 +99,7 @@ function About() {
     }
   ])
 
-  const [aboutSubtitle, useAboutSubtitle] = useState([
+  const [aboutSubtitle] = useState([
     {
       subtitle: 'Born in Penang, Malaysia, now currently living and studying in Ireland. I study in UCD and currently a SAP SWE Intern. I enjoy cooking, coding and learning new skills.'
     },
@@ -123,9 +123,9 @@ function About() {
         <AboutDiv>
             <AboutTitle><b>Hi, I'm Braddy</b>, a computer science student interested in creating solutions that improve daily lives</AboutTitle>
             {
-              aboutSubtitle.map(elem => {
+              aboutSubtitle.map((elem, key) => {
                 return (
-                  <AboutSubtitle>{elem.subtitle}</AboutSubtitle>
+                  <AboutSubtitle key={key}>{elem.subtitle}</AboutSubtitle>
                 )
               })
             }
@@ -149,9 +149,9 @@ function About() {
         }}
       >
         {
-          slideText.map(elem => {
+          slideText.map((elem, key) => {
             return (
-              <CarouselDiv>
+              <CarouselDiv key={key}>
                 <ReactSVG 
                   src={elem.svg}
                   beforeInjection={svg => {
@@ -163,9 +163,9 @@ function About() {
                 </CarouselTitle>
                 <CarouselList>
                   {
-                    elem.subtitle.map(entry => {
+                    elem.subtitle.map((entry, key) => {
                       return (
-                        <CarouselListEntry>
+                        <CarouselListEntry key={key}>
                           {entry}
                         </CarouselListEntry>
                       )
@@ -180,5 +180,3 @@ function About() {
     </Container>
   );
 }
-
-export default About;

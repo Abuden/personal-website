@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const FooterContainer = styled.div.attrs({
+const FooterContainer = styled.div.attrs(props => ({
     className: `pv1-ns ph1 ph4-ns `
-})``
+}))``
 
-const SocialMediaIcon = styled.a.attrs({
+const SocialMediaIcon = styled.a.attrs(props => ({
     className: `link light-gray dim dib h2 w2 mr2`,
     href: props => props.href,
     target: "_blank",
     title: props => props.title
-})``
+}))``
 
-const SVG = styled.svg.attrs({
+const SVG = styled.svg.attrs(props => ({
     fill: "currentColor",
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 16 16",
@@ -21,12 +21,12 @@ const SVG = styled.svg.attrs({
     strokeLinejoin: "round",
     strokeMiterlimit: "1.414"
 
-})``
+}))``
 
-const Path = styled.path.attrs({
+const Path = styled.path.attrs(props => ({
     d: props => props.d,
     fillRule: props => props.fillRule
-})``
+}))``
 
 const svg = [{
         href: "https://www.facebook.com/YeohBrady",
@@ -65,10 +65,17 @@ export default function Footer() {
         <FooterContainer> 
             {
                 svg.map((entry, i) => {
-                    return ( 
-                        <SocialMediaIcon href={entry.href} title = {entry.title}>
+                    return (
+                        <SocialMediaIcon 
+                            key={i}
+                            href={entry.href} 
+                            title={entry.title}>
                             <SVG>
-                                <Path d={entry.d} fillRule = {entry.fillRule}/> 
+                                <Path 
+                                    d={entry.d} 
+                                    fillRule= 
+                                    {entry.fillRule}
+                                /> 
                             </SVG > 
                         </SocialMediaIcon>
                     )
