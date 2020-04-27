@@ -20,6 +20,12 @@ const FlexBox = styled.div.attrs({
     className: `w-100 center mr2 h-100`,
 })``
 
+const HomeFlex = styled.div.attrs(props => ({
+    className: `w-100 center mr2 h-100 cover-l`
+}))`
+
+`
+
 const FlexBoxBgWhite = styled.div.attrs({
     className: `w-100 center mr2 h-100 bg-near-white mb3`
 })``
@@ -31,17 +37,16 @@ const GalleryFlex = styled.div.attrs({
 export default function Container() {
     return (
         <FlexContainer>
-                <FlexBox 
+                <HomeFlex 
                     style={{
-                        height: "1000px", 
-                        backgroundImage: `url('${HomeImg}')`, 
-                        backgroundSize: "cover", 
-                        backgroundAttachment: "fixed", 
-                        backgroundPosition: "center center", 
-                        backgroundRepeat: "no-repeat"
+                        backgroundImage: `url('${HomeImg}')`,
+                        height: '1000px',
+                        backgroundAttachment: 'fixed',
+                        backgroundPosition: 'center center', 
+                        backgroundRepeat: 'no-repeat'
                     }}>
                     <Home/>
-                </FlexBox>
+                </HomeFlex>
 
                 <FlexBoxBgWhite>
                     <About/>
