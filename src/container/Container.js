@@ -35,7 +35,7 @@ const GalleryFlex = styled.div.attrs({
 export default function Container() {
     return (
         <FlexContainer>
-                <HomeFlex 
+                <FlexBox 
                     style={{
                         backgroundImage: `url('${HomeImg}')`,
                         height: '1100px',
@@ -44,7 +44,7 @@ export default function Container() {
                         backgroundRepeat: 'no-repeat'
                     }}>
                     <Home/>
-                </HomeFlex>
+                </FlexBox>
 
                 <FlexBoxBgWhite>
                     <About/>
