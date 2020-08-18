@@ -107,10 +107,7 @@ export default function About() {
       subtitle: 'I\'m currently interested in pursuing a masters and open to a full time position after graduation too.'
     },
     {
-      subtitle: 'I really enjoy cooking, playing video games, photography, programming, travelling and doing volunteering work.'
-    },
-    {
-      subtitle: 'I occasionally do various talks, and I am very big into personal development!'
+      subtitle: 'I really enjoy cooking, playing video games, photography, programming, travelling and doing volunteering work. I am also very big into personal development, and occasionally do various talks on programming.'
     },
     {
       subtitle: 'Reach out to me if you want to collaborate or discuss opportunities :)'
