@@ -101,16 +101,19 @@ export default function About() {
 
   const [aboutSubtitle] = useState([
     {
-      subtitle: 'Born in Penang, Malaysia, now currently living and studying in Ireland. I study in UCD and currently a SAP SWE Intern. I enjoy cooking, coding and learning new skills.'
+      subtitle: 'Born in Penang, Malaysia, now currently living and studying in Ireland. I am a final year student at UCD Computer Science and I am currently a SAP SWE Intern. I got into coding from a young age after watching a video on it.'
     },
     {
-      subtitle: 'I\'m interested in the areas of intelligent systems and distributed systems'
+      subtitle: 'I\'m currently interested in pursuing a masters and open to a full time position after graduation too.'
     },
     {
-      subtitle: 'When I am not not glued to coding or stuck in tutorial hell, I like watching movies and TV shows or playing video games.'
+      subtitle: 'I really enjoy cooking, playing video games, photography, programming, travelling and doing volunteering work.'
     },
     {
-      subtitle: 'Outside of those, I enjoy doing volunteering work and helping people'
+      subtitle: 'I occasionally do various talks, and I am very big into personal development!'
+    },
+    {
+      subtitle: 'Reach out to me if you want to collaborate or discuss opportunities :)'
     }
   ])
 
